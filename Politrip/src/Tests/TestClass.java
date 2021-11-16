@@ -70,7 +70,7 @@ public class TestClass {
 
             driver.findElement(By.id("qa_signup-participant")).click();
             try {
-                Thread.sleep(7000);
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -401,6 +401,7 @@ public class TestClass {
 
             if (!parent.equals(child_window)) {
                 actualTitle = driver.switchTo().window(child_window).getTitle();
+                driver.switchTo().window(parent);
                 if (actualTitle.equals(title)) {
                     return true;
                 }
